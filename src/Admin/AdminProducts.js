@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import { Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, AppBar, Toolbar, IconButton, Box, Pagination, TextField, Paper,Slider, Badge } from '@mui/material';
+import { Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button,  Box, Pagination,  Paper,Slider,} from '@mui/material';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import CartModal from '../cartModal';
-import { useNavigate } from 'react-router-dom';
-import Navbar from '../navbar';
-import { useAuth } from '../authContext';
+// import CartModal from '../cartModal';
+// import { useNavigate } from 'react-router-dom';
+// import Navbar from '../navbar';
+// import { useAuth } from '../authContext';
 import CircularProgress from '@mui/material/CircularProgress';
 import mobileImg from './../Assets/mobile1.jpeg';
 
@@ -89,7 +90,7 @@ const ProductCard = ({ product,cart, setCart }) => {
 
 
 const AdminProductListingPage = (props) => {
-    const apiUrl = 'http://localhost:5000/api/admin/mobiles';
+    const apiUrl = 'https://adtteam27.onrender.com/api/admin/mobiles';
     // const {token} = useAuth()
     const requestOptions = {
         method: 'GET',
@@ -100,14 +101,14 @@ const AdminProductListingPage = (props) => {
     // const [initialProducts,setInitialProducts] = useState([])
 
 
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery] = useState('');
     // const [products, setProducts] = useState(initialProducts);
     const [priceRange, setPriceRange] = useState([0, 2000]);
     const [filteredProducts, setFilteredProducts] = useState(initialProducts);
     // const [cart, setCart] = useState([]);
     let cart = props.cart
     let setCart = props.setCart
-    const [cartModalOpen, setCartModalOpen] = useState(false);
+    // const [cartModalOpen, setCartModalOpen] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
 
@@ -115,7 +116,7 @@ const AdminProductListingPage = (props) => {
     /* Pagination............. */
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(6);
+    const [itemsPerPage] = useState(6);
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -124,6 +125,7 @@ const AdminProductListingPage = (props) => {
     const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
     const handlePageChange = (event, newPage) => {
+        console.log(event)
         setCurrentPage(newPage);
     };
 
@@ -160,21 +162,22 @@ const AdminProductListingPage = (props) => {
         });
     },[])
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const toggleCartModal = () => {
-        setCartModalOpen(!cartModalOpen);
-    };
+    // const toggleCartModal = () => {
+    //     setCartModalOpen(!cartModalOpen);
+    // };
 
-    const navigateToCartPage = () => {
-        console.log("called navigate")
-        // Logic to navigate to the cart page
-        setCartModalOpen(false);
-        navigate('/cart')
-        // Example: navigate('/cart'); if using React Router
-    };
+    // const navigateToCartPage = () => {
+    //     console.log("called navigate")
+    //     // Logic to navigate to the cart page
+    //     setCartModalOpen(false);
+    //     navigate('/cart')
+    //     // Example: navigate('/cart'); if using React Router
+    // };
 
     const handlePriceChange = (event, newValue) => {
+        console.log(event)
         setPriceRange(newValue);
         filterProducts(searchQuery, newValue);
     };
@@ -187,13 +190,13 @@ const AdminProductListingPage = (props) => {
         setFilteredProducts(filtered);
     };
 
-    const handleSearchChange = (event) => {
+    // const handleSearchChange = (event) => {
         
-        setSearchQuery(event.target.value);
-        filterProducts(event.target.value, priceRange);
+    //     setSearchQuery(event.target.value);
+    //     filterProducts(event.target.value, priceRange);
 
-        // console.log("search", initialProducts)
-    };
+    //     // console.log("search", initialProducts)
+    // };
   return (
     <>
         {/* <Navbar searchQuery={searchQuery} handleSearchChange={handleSearchChange} toggleCartModal={toggleCartModal} cart = {cart} cartModalOpen={cartModalOpen} navigateToCartPage={navigateToCartPage} /> */}

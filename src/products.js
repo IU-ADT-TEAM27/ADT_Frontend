@@ -1,11 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, {useEffect, useState} from 'react';
-import { Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, AppBar, Toolbar, IconButton, Box, Pagination, TextField, Paper,Slider, Badge } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import CartModal from './cartModal';
+import { Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Box, Pagination, Paper,Slider } from '@mui/material';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// import CartModal from './cartModal';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './navbar';
-import { useAuth } from './authContext';
+// import { useAuth } from './authContext';
 import CircularProgress from '@mui/material/CircularProgress';
 import mobileImg from './Assets/mobile1.jpeg'
 
@@ -79,7 +82,7 @@ const ProductCard = ({ product,cart, setCart }) => {
 
 
 const ProductListingPage = (props) => {
-    const apiUrl = 'http://localhost:5000/api/user/mobiles';
+    const apiUrl = 'https://adtteam27.onrender.com/api/user/mobiles';
     // const {token} = useAuth()
     const requestOptions = {
         method: 'GET',

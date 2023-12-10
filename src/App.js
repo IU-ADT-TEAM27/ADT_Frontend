@@ -1,6 +1,8 @@
-import logo from './logo.svg';
+/* eslint-disable react-hooks/exhaustive-deps */
+
+// import logo from './logo.svg';
 import './App.css';
-import MuiCard from './card';
+// import MuiCard from './card';
 // import Signup from './grid';
 import ProductListingPage from './products';
 import CartPage from './cart';

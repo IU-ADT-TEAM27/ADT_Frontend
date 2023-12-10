@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Grid, TextField, Button, Typography } from '@mui/material';
 import {useAuth} from './authContext';
 import { useNavigate } from 'react-router-dom';
-import { red } from '@mui/material/colors';
+// import { red } from '@mui/material/colors';
 
 function Signup() {
-    const {token, setAuthToken, authUser, setAuthUser} = useAuth();
+    const { setAuthToken} = useAuth();
     const [isSignup, setIsSignup] = useState(true);
     const [formData, setFormData] = useState({
         firstName: '',
@@ -59,7 +60,7 @@ function Signup() {
 
         if (Object.keys(errors).length === 0) {
             // Form is valid, you can proceed with the API call
-            const apiUrl = isSignup ? 'http://localhost:5000/api/register' : 'http://localhost:5000/api/auth/login';
+            const apiUrl = isSignup ? 'https://adtteam27.onrender.com/api/register' : 'https://adtteam27.onrender.com/api/auth/login';
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

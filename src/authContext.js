@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 // AuthContext.js
 import { createContext, useContext, useEffect, useState } from 'react';
 

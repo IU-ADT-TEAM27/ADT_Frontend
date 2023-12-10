@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from 'react';
 import { Container, Grid, TextField, Button, AppBar, Toolbar, Typography, IconButton, Checkbox , FormControlLabel} from '@mui/material';
 import { Logout } from '@mui/icons-material'; // You can import an appropriate logout icon
@@ -93,7 +94,7 @@ const MobileForm = () => {
     // Handle form submission here
 
         console.log(formData)
-        const apiUrl = 'http://localhost:5000/api/admin/mobile';
+        const apiUrl = 'https://adtteam27.onrender.com/api/admin/mobile';
     // const {token} = useAuth()
         const requestOptions = {
             method: 'POST',

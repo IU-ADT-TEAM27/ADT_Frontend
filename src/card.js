@@ -1,3 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+
 import {Card,CardContent,Typography,Box,CardActions,Button,CardMedia} from '@mui/material';
 
 function MuiCard(){

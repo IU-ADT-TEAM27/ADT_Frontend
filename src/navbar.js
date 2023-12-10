@@ -1,4 +1,5 @@
-import { Container, Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, AppBar, Toolbar, IconButton, Box, Pagination, TextField, Paper,Slider, Badge } from '@mui/material';
+/* eslint-disable no-unused-vars */
+import { Typography,  AppBar, Toolbar, IconButton,  TextField,  Badge } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CartModal from './cartModal';
 // import { useNavigate } from 'react-router-dom';
